@@ -33,3 +33,60 @@ def fib2(n):
      return result
 f100=fib2(100)
 print("result: ",f100)
+
+def ask_ok(prompt,retries=4,reminder='Please try again!'):
+     while True:
+          ok =input(prompt)
+          if ok in ('y','ye','yes'):
+               return True
+          if ok in ('n','no','nop','nope'):
+               return False
+          retries =retries -1
+          if retries <0:
+               raise ValueError('invalid user response')
+          print(reminder)
+
+# ask_ok("입력:",3,"다시 입력:")
+
+i =5
+
+def f(arg=i):
+     print(arg)
+     
+i = 6
+f()
+
+print(i) #전역변수 i
+i = 100
+f()
+def f(a,L=[]):
+     L.append(a)
+     return L
+print(f(1)) # [] -> [1]
+print(f(2)) # [1]-> [1,2]->[1,2,2]
+print(f(3)) # [1,2,2]-> [1,2,2,3] -> no ->[1,3]
+
+def f(a,L=None):
+     if L is None:
+          L=[]
+     L.append(a)
+     return L
+print(f(1))
+print(f(2))
+print(f(3))
+
+def parrot(voltage,state='a stiff',action='voom',type='Norwegian Blue'):
+     print("--This parrot wouldn't",action,end=' ')
+     print("if you put",voltage,"volts through it.")
+     print("-- Lovely plumage,the",type)
+     print("--It's",state,"!")
+parrot(1000)
+parrot(voltage=1000)
+parrot(voltage=1000000,action='VOOOOM')
+parrot(action='vOOOOOm',voltage=1000000)
+parrot('a million','bereft of life','jump')
+parrot('a thousnad',state='pushing up the daisies')
+# parrot() #voltage 초기화 x
+# parrot(voltage=5.0,'dead') # 위치인수가 들어갈수 없음
+# parrot(110,voltage=220) #voltage 변수가 다중으로 들어가있음
+# parrot(actor='John Cleese') #변수 명이 잘못되어있음
