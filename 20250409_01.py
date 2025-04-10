@@ -10,6 +10,10 @@ for num in range(2,10):
           print("Found an even number",num)
           continue
      print("Found a number", num)
+     #구구단
+for x in range(2,10):     
+    for y in range(1,10):
+        print(x,"*",y,"=",x*y)
 
 def fib(n):
      a,b=0,1
@@ -86,7 +90,7 @@ parrot(voltage=1000000,action='VOOOOM')
 parrot(action='vOOOOOm',voltage=1000000)
 parrot('a million','bereft of life','jump')
 parrot('a thousnad',state='pushing up the daisies')
-# parrot() #voltage 초기화 x
-# parrot(voltage=5.0,'dead') # 위치인수가 들어갈수 없음
-# parrot(110,voltage=220) #voltage 변수가 다중으로 들어가있음
+# parrot() #voltage 디폴트값 x
+# parrot(voltage=5.0,'dead') # 위치인자로써는 처음이기 때문에 voltage로 인식
+# parrot(110,voltage=220) # voltage 값이 다중으로 들어가있음
 # parrot(actor='John Cleese') #변수 명이 잘못되어있음
