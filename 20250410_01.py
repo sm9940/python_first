@@ -157,10 +157,9 @@ matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
 m= [[row[i]for row in matrix]for i in range(4)]
 print(m)
 
-temp=[]
+transposed=[]
 for i in range(4):
-    itemTemp=[]
-    for row in matrix :
-        itemTemp.append(row[i])
-temp.append(itemTemp)
-print(temp)
+    transposed.append([m[i] for m in matrix])
+print(transposed)
+print(list(zip(*matrix)))
+
