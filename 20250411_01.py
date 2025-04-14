@@ -96,27 +96,27 @@ mySet = set()
 for x in "abracadabra":
     if x not in "abc":
         mySet.add(x)
-print(mySet)
+print('mySet:',mySet)
 
 #add() : set에 한개의 요소 추가
 s1 = set([1,2,3])
 s1.add(4)
-print(s1)
+print('s1:',s1)
 #update() : set에 여러개의 요소 추가
 s2 = set([1,2,3])
 s2.update([4,5,6])
-print(s2)
+print('s2:',s2)
 #remove() : set에서 특정 요소 삭제
 s3 = set([1,2,3])
 s3.remove(2)
-print(s3)
+print('s3:',s3)
 
 ### python - 자료구조: 딕셔너리(dictionary)
 
 #- 매핑형 자료형
 #- 시퀀스 자료형과 달리 숫자로 된 인덱스(index)가 아니라 **키(key)**를 사용함
 #    - key로는 모든 불변형을 사용 가능(문자열, 숫자 등)
-#    - NULL은 못 들어감 (🚩어떤 언어에서는 가능 - Java의 해시테이블 등)
+#    - NULL은 못 들어감 (어떤 언어에서는 가능 - Java의 해시테이블 등)
 #    - 튜플이 불변값인 문자열, 숫자, 튜플만 포함할 경우 튜플도 키로 사용할 수 있음
         
 #        ⇒ 가변객체인 리스트 이런게 들어있는 튜플 이런건 불가능
@@ -157,17 +157,17 @@ print(list(tel.values()))
 #[4098, 4127]
 
 myDict = dict([("sape",4139),("guido",4127),("jack",4098)])
-print(myDict)
+print('myDict',myDict)
 myDict = dict(sape=4139,guido=4127,jack=4098)
-print(myDict)
+print('myDict',myDict)
 
 myDict = dict()
 for x in (2,4,6):
     myDict[x] = x**2
-print(myDict)
+print('myDict',myDict)
 
 myDict = {x:x**2 for x in (2,4,6)}
-print(myDict)
+print('myDict',myDict)
 
 ### 딕셔너리 뷰(dictionary view)
 
@@ -181,7 +181,7 @@ print(myDict)
 
 knights = {"gallahad":"the pure","robin":"the brave"}
 for key,value in knights.items():
-	print(key,value)
+	print('key= ',key,',value=',value)
      
 for x,y in enumerate(['tic','tac','toe']):
 	print(x,y)
@@ -243,3 +243,36 @@ print(non_null)
     
 #     (1,2,3,4) < (1,2,3,4,5,6)
     
+def fib(n):
+    a,b=0,1
+    while a<n:
+        print(a,end='')
+        a,b = b,a+b
+    print()
+    
+def fib2(n):
+    result = []
+    a,b= 0,1
+    while a<n:
+        result.append(a)
+        a,b = b,a+b
+    return result
+
+
+resultList = fib2(1000)
+print('resultList: ',resultList)
+print("-----------------------------")
+
+import fibonacciModule as fib3
+print(fib3.__name__)
+resultList[:] = []
+resultList = fib3.fibonacci(1000)
+print(resultList)
+
+# import -> 동적 라이브러리 호출(dll)
+# include -> (C, C++언어) 정적 라이브러리 호출(sll)
+# import tensorflow
+# print(tensorflow.__name)
+
+from fibonacciModule import fibonacci as fib4
+print(fib4(100))
