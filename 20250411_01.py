@@ -276,3 +276,6 @@ print(resultList)
 
 from fibonacciModule import fibonacci as fib4
 print(fib4(100))
+# 'python.exe' 'launcher' '51071'(메모리주소) -- 20250411_01.py(파일명)
+# dir(fibonacci) #import
+print(dir(fib4))
